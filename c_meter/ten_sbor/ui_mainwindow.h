@@ -41,13 +41,13 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(130, 60, 111, 31));
+        label->setGeometry(QRect(10, 10, 261, 31));
         buttstart = new QPushButton(centralWidget);
         buttstart->setObjectName(QStringLiteral("buttstart"));
-        buttstart->setGeometry(QRect(80, 240, 75, 23));
+        buttstart->setGeometry(QRect(10, 100, 161, 23));
         buttstop = new QPushButton(centralWidget);
         buttstop->setObjectName(QStringLiteral("buttstop"));
-        buttstop->setGeometry(QRect(290, 190, 75, 23));
+        buttstop->setGeometry(QRect(184, 100, 151, 23));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -69,8 +69,8 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QApplication::translate("MainWindow", "\320\242\320\265\320\272\321\201\321\202...", nullptr));
-        buttstart->setText(QApplication::translate("MainWindow", "\320\241\321\202\320\260\321\200\321\202", nullptr));
-        buttstop->setText(QApplication::translate("MainWindow", "\320\241\321\202\320\276\320\277", nullptr));
+        buttstart->setText(QApplication::translate("MainWindow", "\320\236\320\261\320\275\320\276\320\262\320\270\321\202\321\214 \321\201\320\277\320\270\321\201\320\276\320\272 \321\203\321\201\321\202\321\200\320\276\320\271\321\201\321\202\320\262", nullptr));
+        buttstop->setText(QApplication::translate("MainWindow", "\320\237\321\200\320\276\320\262\320\265\321\200\320\270\321\202\321\214 \320\275\320\260\320\273\320\270\321\207\320\270\320\265 FT232R", nullptr));
     } // retranslateUi
 
 };

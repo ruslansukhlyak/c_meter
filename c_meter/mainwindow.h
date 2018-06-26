@@ -23,10 +23,13 @@ private slots:
 
     void on_buttstop_clicked();
 
-    void on_buttstart_pressed();
-
 private:
     Ui::MainWindow *ui;
+    FT_DEVICE_LIST_INFO_NODE *devInfo;
+    FT_STATUS ftStatus;
+    FT_HANDLE ftHandle;
+    DWORD numDevs;
+    bool priznak = 0;
 };
 
 #endif // MAINWINDOW_H
