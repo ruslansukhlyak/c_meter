@@ -25,7 +25,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    get_data32b.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -35,5 +36,11 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
-LIBS += -L"D:\github_rep\c_meter\c_meter"
+#LIBS += -L"D:\github_rep\c_meter\c_meter"
+#LIBS += -lftd2xx
+
+INCLUDEPATH += $$PWD
+
+QMAKE_LIBDIR += $$PWD
+
 LIBS += -lftd2xx

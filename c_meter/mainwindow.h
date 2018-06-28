@@ -23,6 +23,8 @@ private slots:
 
     void on_buttstop_clicked();
 
+    void on_getfreqbutton_clicked();
+
 private:
     Ui::MainWindow *ui;
     FT_DEVICE_LIST_INFO_NODE *devInfo;
@@ -30,6 +32,10 @@ private:
     FT_HANDLE ftHandle;
     DWORD numDevs;
     bool priznak = 0;
+    int devchoice = -1;
+    UINT32 rxbuffer;
+
+    bool get_data32b();
 };
 
 #endif // MAINWINDOW_H

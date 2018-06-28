@@ -48,8 +48,8 @@ void MainWindow::on_buttstop_clicked()
                 {
                     if (devInfo[i].ID == 0x04036001) /*(devInfo[i].Description == "FT232R USB UART")*/
                     {
-                        ui->label->setText("Подключен FT232R USB UART");
-
+                        ui->label->setText("Подключен FT232R USB UART");       
+                        devchoice = i;
                     }
                     else
                     {
@@ -69,3 +69,27 @@ void MainWindow::on_buttstop_clicked()
     }
 }
 
+
+void MainWindow::on_getfreqbutton_clicked()
+{
+    if(devchoice != -1)
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            if(get_data32b())
+            {
+                QString textlabel = "Количество подключенных устройств - " + QString::number(rxbuffer,10);
+                ui->getfreqlabel->setText(textlabel);
+            }
+            else
+            {
+                ui->getfreqlabel->setText("Не удалось принять данные");
+            }
+
+        }
+    }
+    else
+    {
+        ui->getfreqlabel->setText("Нет FT232R USB UART");
+    }
+}
