@@ -26,7 +26,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    get_data32b.cpp
+    get_data32b.cpp \
+    trans_data_to_dev.cpp
 
 HEADERS += \
         mainwindow.h \

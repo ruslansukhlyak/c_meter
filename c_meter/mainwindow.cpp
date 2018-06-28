@@ -34,6 +34,7 @@ void MainWindow::on_buttstart_clicked()
 
 void MainWindow::on_buttstop_clicked()
 {
+    bool flag = 0;
     if(priznak == 1)
     {
         if (numDevs > 0)
@@ -48,12 +49,36 @@ void MainWindow::on_buttstop_clicked()
                 {
                     if (devInfo[i].ID == 0x04036001) /*(devInfo[i].Description == "FT232R USB UART")*/
                     {
-                        ui->label->setText("Подключен FT232R USB UART");       
+                        ui->label->setText("Подключен FT232R USB UART");
                         devchoice = i;
+                        flag = 1;
+
+
+                        ftStatus = FT_Open(devchoice, &ftHandle);
+                        if (ftStatus != FT_OK)
+                        {
+                            // ошибка FT_Open
+                            QString textlabel = "FT_Open error - " + QString::number(ftStatus);
+                            ui->label->setText(textlabel);
+                        }
+                        ftStatus = FT_SetBaudRate(ftHandle, 256000); // установка скорости 256000 бод
+                        if (ftStatus != FT_OK)
+                        {
+                            ui->label->setText("ошибка FT_SetBaudRate");
+                        }
+                        ftStatus = FT_SetDataCharacteristics(ftHandle, FT_BITS_8, FT_STOP_BITS_1, FT_PARITY_NONE);
+                        if (ftStatus != FT_OK)
+                        {
+                            ui->label->setText("ошибка FT_SetDataCharacteristics");
+                        }
+
                     }
                     else
                     {
-                        ui->label->setText("FT232R USB UART не найден");
+                        if( flag == 0 )
+                        {
+                            ui->label->setText("FT232R USB UART не найден");
+                        }
                     }
                 }
             }
@@ -72,13 +97,18 @@ void MainWindow::on_buttstop_clicked()
 
 void MainWindow::on_getfreqbutton_clicked()
 {
+
     if(devchoice != -1)
     {
         for(int i = 0; i < 10; i++)
         {
+            if(!trans_data_to_dev(2))
+            {
+                ui->getfreqlabel->setText("Не удалось отправить команду");
+            }
             if(get_data32b())
             {
-                QString textlabel = "Количество подключенных устройств - " + QString::number(rxbuffer,10);
+                QString textlabel = "Принятые данные - " + QString::number(rxbuffer,10);
                 ui->getfreqlabel->setText(textlabel);
             }
             else

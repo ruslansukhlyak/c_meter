@@ -36,6 +36,7 @@ private:
     UINT32 rxbuffer;
 
     bool get_data32b();
+    bool trans_data_to_dev(UINT32);
 };
 
 #endif // MAINWINDOW_H
