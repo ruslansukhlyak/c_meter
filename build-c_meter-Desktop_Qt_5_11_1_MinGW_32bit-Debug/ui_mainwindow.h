@@ -38,28 +38,28 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(588, 366);
+        MainWindow->resize(826, 543);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 190, 261, 31));
+        label->setGeometry(QRect(10, 350, 261, 31));
         buttstart = new QPushButton(centralWidget);
         buttstart->setObjectName(QStringLiteral("buttstart"));
-        buttstart->setGeometry(QRect(10, 230, 161, 23));
+        buttstart->setGeometry(QRect(10, 390, 161, 23));
         buttstop = new QPushButton(centralWidget);
         buttstop->setObjectName(QStringLiteral("buttstop"));
-        buttstop->setGeometry(QRect(10, 260, 151, 23));
+        buttstop->setGeometry(QRect(10, 420, 151, 23));
         getfreqbutton = new QPushButton(centralWidget);
         getfreqbutton->setObjectName(QStringLiteral("getfreqbutton"));
-        getfreqbutton->setGeometry(QRect(320, 230, 221, 23));
+        getfreqbutton->setGeometry(QRect(320, 390, 221, 23));
         getfreqlabel = new QLabel(centralWidget);
         getfreqlabel->setObjectName(QStringLiteral("getfreqlabel"));
-        getfreqlabel->setGeometry(QRect(320, 190, 261, 31));
+        getfreqlabel->setGeometry(QRect(320, 350, 261, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 588, 21));
+        menuBar->setGeometry(QRect(0, 0, 826, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));

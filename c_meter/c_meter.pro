@@ -40,8 +40,12 @@ FORMS += \
 #LIBS += -L"D:\github_rep\c_meter\c_meter"
 #LIBS += -lftd2xx
 
-INCLUDEPATH += $$PWD
+INCLUDEPATH += \
+        $$PWD \
+        C:\Program Files (x86)\Qwt\include \
 
 QMAKE_LIBDIR += $$PWD
 
-LIBS += -lftd2xx
+LIBS += \
+        -lftd2xx \
+
